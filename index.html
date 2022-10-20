@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Global GROUP España" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Document Title	============================================= -->
+	<title>GlobalGROUP España</title>
+	
+	<style>
+
+	.swiper-container-horizontal>.swiper-scrollbar {
+		top: 40%;
+		bottom: auto;
+		left: 50%;
+		margin-left: 20%;
+		width: 200px;
+		height: 2px;
+		transform: translateY(-50%);
+		background-color: rgba(0,0,0,0.4);
+		border-radius: 2px;
+	}
+
+	.swiper-scrollbar-drag { background: #000 }
+
+	.slide-number {
+		opacity: 1;
+		bottom: 10px;
+		text-align: left;
+		right: auto;
+	}
+
+	.slide-number-current {
+		top: auto;
+		bottom: 0;
+		font-size: 30px;
+		font-weight: 700;
+	}
+
+	.slide-number span {
+		margin-left: 20px;
+		font-size: 16px;
+	}
+
+	.slide-number-total {
+		font-size: 13px;
+		line-height: 28px;
+		left: 29px;
+	}
+
+	.swiper-navs {
+		position: absolute;
+		display: block;
+		left: 50%;
+		top: 40%;
+		margin-top: 60px;
+		margin-left: 20%;
+	}
+
+	.slider-arrow-left,
+	.slider-arrow-right {
+		border-radius: 50%;
+		background: transparent;
+		border: 1px solid rgba(0,0,0,0.7);
+		width: 36px;
+		height: 36px;
+	}
+
+	.slider-arrow-right { left: 45px; }
+
+	.slider-arrow-left i,
+	.slider-arrow-right i {
+		display: block;
+		width: 36px;
+		height: 36px;
+		font-size: 16px;
+		line-height: 34px;
+		margin: 0 auto;
+		color: #000;
+	}
+
+	.slider-arrow-right i { margin-left: -1px; }
+
+	.swiper-button-disabled {
+		opacity: .5;
+		cursor: default;
+	}
+
+	.dark .slider-arrow-left,
+	.dark .slider-arrow-right { border-color: rgba(255,255,255,0.7); }
+
+	.dark .swiper-container-horizontal > .swiper-scrollbar { background-color: rgba(255,255,255,0.4);  }
+
+	.dark .swiper-scrollbar-drag { background: #FFF }
+
+	.dark .slide-number,
+	.dark .slider-arrow-left i,
+	.dark .slider-arrow-right i { color: #FFF; }
+
+	@media (min-width: 576px) and (max-width: 767px) {
+		.swiper-container-horizontal>.swiper-scrollbar {
+			top: auto;
+			left: auto;
+			bottom: 70px;
+			right: 30px;
+			width: 100px;
+			height: 2px;
+			transform: translateY(0);
+		}
+
+		.swiper-navs {
+			left: auto;
+			top: auto;
+			bottom: 30px;
+			right: 115px;
+			margin: 0;
+		}
+		
+	}
+	
+	@media (max-width: 1700px) {
+	
+		.swiper-wrapper .container{
+	
+	top:-15%; right:2%;
+	}
+	
+	}
+	
+	@media (min-width: 1700px) {
+	
+		.swiper-wrapper .container{
+	
+	top:-250px; 
+	right:200px;
+	}
+	
+	}
+
+	.slider-element .slider-product-desc {
+		position: absolute;
+		top: auto;
+		bottom: 0;
+		left: auto;
+		right: 0;
+		width: 65%;
+		z-index: 2;
+		overflow: hidden;
+		background-color:#000000b5;
+	}
+
+	.slider-element .slider-product-desc a .icon-greater-than {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		z-index: 99;
+		color: #000;
+		font-size: 20px;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		background-color: rgb(255, 139, 31);
+		border-radius: 50%;
+		text-align: center;
+		padding-left: 4px;
+		margin-top: -20px;
+		margin-left: -20px;
+		-webkit-transition: transform .3s ease;
+		-o-transition: transform .3s ease;
+		transition: transform .3s ease;
+	}
+
+	.slider-element .slider-product-desc a:hover .icon-greater-than {
+		-webkit-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		-o-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+
+	.blurred-box:after{
+		content: '';
+		width: 130%;
+		height: 130%;
+		background: inherit;
+		position: absolute;
+		left: -25px;
+		top: -25px;
+		background-color: rgba(255, 255, 255, 0.2);
+		-webkit-filter: blur(20px);
+		-o-filter: blur(20px);
+		filter: blur(20px);
+	}
+
+	@media (max-width: 576px) {
+		.swiper-container-horizontal>.swiper-scrollbar { display: none; }
+		.swiper-navs { right: 0px; }
+	}
+	
+	.fbox-desc {
+	height:150px;
+	background-color:#F9F9F9!important;
+	}
+	
+	.portfolio .col-lg-4 .feature-box{
+	-webkit-box-shadow: 10px 10px 8px -6px rgba(0,0,0,0.19);
+	-moz-box-shadow: 10px 10px 8px -6px rgba(0,0,0,0.19);
+	box-shadow: 10px 10px 8px -6px rgba(0,0,0,0.19);
+	border-radius: 5px 5px 5px 5px;;
+	}
+	
+	/*.portfolio .col-lg-4 .feature-box{
+	transition: 0.3s;
+	}
+	
+	.portfolio .col-lg-4 .feature-box:hover{
+	position:relative;
+	top:-5px;
+	-webkit-box-shadow: 10px 10px 8px -3px rgba(0,0,0,0.31);
+	-moz-box-shadow: 10px 10px 8px -3px rgba(0,0,0,0.31);
+	box-shadow: 10px 10px 8px -3px rgba(0,0,0,0.31);
+	}*/
+	
+	
+
+	</style>
+
+
+</head>
+
+<body class="stretched side-panel-left">
+
+	<div class="body-overlay"></div>
+	
+	<!-- Side Panel-->
+	
+	<div id="side-panel" class="dark">
+
+		<div id="side-panel-trigger-close" class="side-panel-trigger"><a href="#"><i class="icon-line-cross"></i></a></div>
+
+		<div class="side-panel-wrap">
+
+			<div class="widget clearfix">
+			
+			
+
+				<div class="heading-block fancy-title nobottomborder title-bottom-border">
+					<font face="Century Gothic" style="font-size: 200%"><span style="color:black">global</span><span style="color:gray">group<sub style="color:black; font-size: 30%">&reg </sub></span></font>
+				</div>
+		
+									<p>Los certificados GlobalGROUP están acreditados por UKAS, la entidad de acreditación más prestigiosa del mundo. Contacta con nosotros para informarte acerca de nuestros certificados. </p>
+		
+									<div class="container clearfix" style="z-index: 2">
+				<div class="emphasis-title dark nobottommargin">
+					<span class="before-heading" style="color: #FFF;">info@globalgroup.com.es</span>
+					<h4 class="t700 ls0" style="color: #FFF;">+34 902 955 533</h4>
+				</div>
+				<br>
+				<!--<span>C/ La reina, 8<br>Madrid, 28003 </span>-->
+			</div>
+
+			</div>
+
+		</div>
+
+	</div>
+	
+	<!--Side Panel END -->
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="transparent-header dark full-header" data-sticky-class="not-dark">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- Logo
+					============================================= -->
+					<div id="logo">
+						<a href="index.html" class="standard-logo" data-dark-logo="images/satura icon v1.svg"><img src="images/satura icon v1.svg" alt="GG Logo"></a>
+						<a href="index.html" class="retina-logo" data-dark-logo="images/satura icon v1.svg"><img src="images/satura icon v1.svg" alt="GG Logo"></a>
+					</div><!-- #logo end -->
+
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu" class="dark">
+
+						<ul>
+							<li class="current"><a href="index.html"><div>Inicio</div></a></li>
+							<li><a href="servicios.html"><div>Servicios</div></a>
+								<ul>								
+									<li><a href="servicios.html"><div>Explora</div></a></li>
+									<li><a href="servicios.html" data-scrollto="#section-certificados"><div><i class="icon-line-plus"></i> Certificados</div></a>
+										<ul>
+											<li><a href="iso9001.html"><div>Minería de procesos</div></a></li>
+											<li><a href="iso14001.html"><div>Sistemas digitales</div></a></li>
+											<li><a href="iso27001.html"><div>Automatización</div></a></li>											
+										</ul>
+									</li>
+									<!--<li><a href="#"><div><i class="icon-line-plus"></i> Formación</div></a>
+										<ul>
+											<li><a href="#"><div>Recursos Humanos</div></a></li>
+											<li><a href="#"><div>Auditorías</div></a></li>
+											<li><a href="#"><div>Gestión de Empresas</div></a></li>>
+										</ul>-->
+									</li>
+								</ul>
+		
+							</li>
+							<li><a href="sobre-nosotros.html"><div>Sobre Nosotros</div></a>
+							<li><a href="contacto.html"><div>Contacto</div></a>					
+
+						</ul>
+
+					</nav><!-- #primary-menu end -->
+
+				</div>
+
+			</div>
+
+		</header><!-- #header end -->
+
+		<section id="slider" class="slider-element slider-parallax full-screen force-full-screen">
+
+			<div class="slider-parallax-inner">
+
+				<div class="full-screen force-full-screen dark section nopadding nomargin noborder ohidden" style="background-image: linear-gradient(to bottom, rgba(20, 20, 20, 1), rgba(40, 40, 40, 0.82), rgba(0, 169, 141, 0.72)),
+    url('images/cover.jpg'); background-size: cover; background-position: center center;">
+
+					<div class="container center">
+						<div class="vertical-middle">
+							<div class="emphasis-title">
+								<h1><font face="Century Gothic"><span style="color:#00a98d">satura</span><span style="color:#ff8703">.</span></font></h1>
+								<h3>
+									<!--<span class="text-rotater nocolor" data-separator="|" data-rotate="fadeIn" data-speed="6000">
+										<span class="t-rotate t700 font-body opm-large-word">Management Systems Experts|International Certification Network|Social, Ethical, Objective</span>
+									</span>-->
+									<span class="font-body opm-large-word" style="color:white">Agencia digital. Transformación de PYMES.</span>						
+								</h3>
+							</div>
+							<!--<a href="#" class="button button-border button-light button-circle" data-scrollto="#section-about" data-easing="easeInOutExpo" data-speed="1250" data-offset="70">Conócenos</a><br>
+							<a href="servicios.html" class="button button-border button-light button-circle" data-scrollto="#section-works" data-easing="easeInOutExpo" data-speed="1250" data-offset="70">Servicios de Certificación</a>
+							-->
+						</div>
+					</div>
+
+					<!--<div class="video-wrap">
+						<div class="video-overlay" style="background-color: #00000078;"></div>
+					</div>-->
+
+					<a href="#" data-scrollto="#section-about" data-easing="easeInOutExpo" data-speed="1250" data-offset="65" class="one-page-arrow dark"><i class="icon-angle-down infinite animated fadeInDown"></i></a>
+
+				</div>
+
+			</div>
+
+		</section><!-- #slider end -->
+
+		<!-- Content ============================================= -->
+
+		<section id="content">
+
+			<div class="content-wrap nopadding">
+
+					<!-- Intro -->
+
+				<section id="section-about" class="page-section section nobg nomargin">
+						<div class="container clearfix" style='padding-top:40px'>
+		
+								<div class="heading-block bottommargin-lg center">
+									<h2>Digitalización que funciona para tu PYME. De verdad.</h2>
+									<span style='padding-top:40px; padding-bottom:40px'>
+									En satura. ayudamos a los pequeños negocios a prosperar en la era digital impulsando la transformación integral: mediante tecnología y cultura. Trabajamos con nuestros clientes utilizando el poder del software y los datos para modernizar los procesos centrales del negocio. Nuestra filosofía se basa en la simplicidad y la automatización, y nuestra meta es impulsar el crecimiento digital de pequeñas y medianas empresas en España.
+									</span>
+								</div>
+		
+								<div class="col_one_third">
+		
+									<div class="heading-block fancy-title nobottomborder title-bottom-border">
+										<h4>Minería de <span>procesos</span>
+										</span></h4>
+									</div>
+		
+									<p>Extrae conocimiento de los procesos internos de la empresa. Identifica tareas y eventos reales que perjudican al rendimiento.</p>
+		
+								</div>
+		
+								<div class="col_one_third">
+		
+									<div class="heading-block fancy-title nobottomborder title-bottom-border">
+										<h4>Soluciones <span>digitales</span></h4>
+									</div>
+		
+									<p>El progreso tecnológico funciona cuando está respaldado por una buena cultura de trabajo. Ofrece a los trabajadores un cambio que ayude de verdad.</p>
+		
+								</div>
+		
+								<div class="col_one_third col_last">
+		
+									<div class="heading-block fancy-title nobottomborder title-bottom-border">
+										<h4>Gestión de <span>Automatización</span></h4>
+									</div>
+		
+									<p>Convierte las tareas más mecánicas en procesos infalibles. Minimiza el error y aumenta la ágilidad para dedicar tiempo a lo que de verdad importa.</p>
+		
+								</div>
+		
+								<div class="clear"></div>
+		
+							</div>
+					</section>
+				</div>	
+					<!-- Intro end -->
+				
+			<!-- SPAM 
+		<section id="slider" class="slider-element dark swiper_wrapper clearfix" data-autoplay="10000" data-speed="500">
+
+			<div class="swiper-container swiper-parent">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide dark" style="background-image:url('images/gears.jpg');">
+						<div class="container clearfix">
+							<div class="slider-caption" style="max-width: 450px;">
+								<h3 class="nott" data-animate="fadeInUp">Sistema de Gestión de Calidad</h3>
+								<p class="d-none d-sm-block" style="font-size: 17px;" data-animate="fadeInUp" data-delay="200">El sistema de gestión más común en los sectores industriales. Orientado a la creación de servicios con valor y calidad tangibles, el eje principal del sistema de gestión de calidad es el cliente. </p>
+								<a href="iso9001.html" data-animate="fadeInUp" data-delay="400"><b>Conocer más</b></a>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide dark" style="background-image:url('images/plants.jpg');">
+						<div class="container clearfix">
+							<div class="slider-caption" style="max-width: 450px;">
+								<h3 class="nott" data-animate="fadeInUp">Sistema de Gestión Medioambiental</h3>
+								<p class="d-none d-sm-block" style="font-size: 17px;" data-animate="fadeInUp" data-delay="200">El sistema de gestión ISO 14001 se centra en organizar, identificar, priorizar y gestionar los riesgos ambientales. Este estándar materializa la filosofía sostenible de la empresa.</p>
+								<a href="iso14001.html" data-animate="fadeInUp" data-delay="400"><b>Conocer más</b></a>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide dark" style="background-image:url('images/chips.jpg');">
+						<div class="container clearfix">
+							<div class="slider-caption" style="max-width: 450px;">
+								<h3 class="nott" data-animate="fadeInUp">Sistema de Gestión de la Información</h3>
+								<p class="d-none d-sm-block" style="font-size: 17px;" data-animate="fadeInUp" data-delay="200">La priorización de los riesgos de la era digital es la base del sistema de gestión ISO 27001. Orientado a garantizar la protección y la integridad de la información, atiende a las necesidades tecnológicas actuales.</p>
+								<a href="iso27001.html" data-animate="fadeInUp" data-delay="400"><b>Conocer más</b></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-navs">
+					<div class="slider-arrow-left"><i class="icon-line-arrow-left"></i></div>
+					<div class="slider-arrow-right"><i class="icon-line-arrow-right"></i></div>
+				</div>
+				<div class="swiper-scrollbar">
+					<div class="swiper-scrollbar-drag">
+					<div class="slide-number"><div class="slide-number-current"></div><span>/</span><div class="slide-number-total"></div></div></div>
+				</div>
+			</div>
+
+			<!-- Slider Bottom Content
+			============================================= 
+			<div class="slider-product-desc dark">
+				<div class="row nomargin d-none d-md-flex clearfix">
+					<div class="col-md-8 px-5 py-4">
+						<div class="before-heading text-white-50 t400 uppercase ls1 t400 mb-3" style="font-style: normal; font-family: 'Poppins', sans-serif; font-size: 12px;">Acreditación UKAS</div>
+						<h3 class="mb-1" style="font-family: 'Poppins', sans-serif;">Pide una quota para tu nueva certificación</h3>
+						<p class="mb-2 text-white-50">GlobalGROUP ofrece presupuestos cerrados con contratos de 3 años, adaptandose a las necesidades de nuestros clientes de forma personalizada.</p>
+					</div>
+					<div class="col-md-4 px-5 py-4">
+					<br>
+					<br>
+						<h5><a href="#" class="button button-xlarge button-rounded side-panel-trigger" >Quota <i class="icon-chat"></i></a></h5>
+					</div>
+
+	
+				</div>
+			</div>
+			
+
+		</section> -->
+		
+		<!-- TIMELINE! -->
+		
+<div id='timeline'>
+<div class="container py-2 mt-4 mb-4">
+  <!-- timeline item 1 -->
+  <div class="row no-gutters">
+    <div class="col-sm"> <!--spacer--> </div>
+    <!-- timeline item 1 center dot -->
+    <div class="col-sm-1 text-center flex-column d-none d-sm-flex">
+      <div class="row h-50">
+        <div class="col">&nbsp;</div>
+        <div class="col">&nbsp;</div>
+      </div>
+      <h5 class="m-2">
+        <span class="badge badge-pill bg-light border">&nbsp;</span>
+      </h5>
+      <div class="row h-50">
+        <div class="col border-right">&nbsp;</div>
+        <div class="col">&nbsp;</div>
+      </div>
+    </div>
+    <!-- timeline item 1 event content -->
+    <div class="col-sm py-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="float-right text-muted small">Jan 9th 2019 7:00 AM</div>
+          <h4 class="card-title">Day 1 Orientation</h4>
+          <p class="card-text">Welcome to the campus, introduction and get started with the tour.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/row-->
+  <!-- timeline item 2 -->
+  <div class="row no-gutters">
+    <div class="col-sm py-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="float-right small">Jan 10th 2019 8:30 AM</div>
+          <h4 class="card-title">Day 2 Sessions</h4>
+          <p class="card-text">Sign-up for the lessons and speakers that coincide with your course syllabus. Meet and greet with instructors.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1 text-center flex-column d-none d-sm-flex">
+      <div class="row h-50">
+        <div class="col border-right">&nbsp;</div>
+        <div class="col">&nbsp;</div>
+      </div>
+      <h5 class="m-2">
+        <span class="badge badge-pill bg-light border">&nbsp;</span>
+      </h5>
+      <div class="row h-50">
+        <div class="col border-right">&nbsp;</div>
+        <div class="col">&nbsp;</div>
+      </div>
+    </div>
+    <div class="col-sm"> <!--spacer--> </div>
+  </div>
+  <!--/row-->
+  <!-- timeline item 3 -->
+  <div class="row no-gutters">
+    <div class="col-sm"> <!--spacer--> </div>
+    <div class="col-sm-1 text-center flex-column d-none d-sm-flex">
+      <div class="row h-50">
+        <div class="col border-right">&nbsp;</div>
+        <div class="col">&nbsp;</div>
+      </div>
+      <h5 class="m-2">
+        <span class="badge badge-pill bg-light border">&nbsp;</span>
+      </h5>
+      <div class="row h-50">
+        <div class="col border-right">&nbsp;</div>
+        <div class="col">&nbsp;</div>
+      </div>
+    </div>
+    <div class="col-sm py-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="float-right text-muted small">Jan 11th 2019 8:30 AM</div>
+          <h4 class="card-title">Day 3 Sessions</h4>
+          <p>Shoreditch vegan artisan Helvetica. Tattooed Codeply Echo Park Godard kogi, next level irony ennui twee squid fap selvage. Meggings flannel Brooklyn literally small batch, mumblecore PBR try-hard kale chips. Brooklyn vinyl lumbersexual
+            bicycle rights, viral fap cronut leggings squid chillwave pickled gentrify mustache.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/row-->
+  <!-- timeline item 4 -->
+  <div class="row no-gutters">
+    <div class="col-sm py-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="float-right text-muted small">Jan 12th 2019 11:30 AM</div>
+          <h4 class="card-title">Day 4 Wrap-up</h4>
+          <p>Join us for lunch in Bootsy's cafe across from the Campus Center.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1 text-center flex-column d-none d-sm-flex">
+      <div class="row h-50">
+        <div class="col border-right">&nbsp;</div>
+        <div class="col">&nbsp;</div>
+      </div>
+      <h5 class="m-2">
+        <span class="badge badge-pill bg-light border">&nbsp;</span>
+      </h5>
+      <div class="row h-50">
+        <div class="col">&nbsp;</div>
+        <div class="col">&nbsp;</div>
+      </div>
+    </div>
+    <div class="col-sm"> <!--spacer--> </div>
+  </div>
+  <!--/row-->
+</div>
+</div>
+
+		
+				
+
+			<!-- SPAM out-->
+		<div id='como-trabajamos' class="container clearfix" >
+		
+								<div class="heading-block center">
+									<h2>Como trabajamos</h2>
+									<span style='padding-top:40px; padding-bottom:40px'>No es transformación digital. Es transformación integral. Soluciones simples y eficaces, desde la tecnología hasta la cultura a través de cada modelo de negocio único.</span>
+								</div>
+								
+		<div class="row clearfix portfolio">
+							<div class="col-lg-4 bottommargin-sm" data-animate="fadeInUpBig">
+								<div class="feature-box media-box fbox-bg">
+									<div class="fbox-media">
+										<a href="iso9001.html"><img class="image_fade" src="images/gestion.jpg" alt="Featured Box Image"></a>
+									</div>
+									<div class="fbox-desc">
+										<h3 class="nott">Sistema de Gestión de Calidad<span class="subtitle">ISO 9001</span></h3>
+										<a href="iso9001.html" class="button-link noborder color">Ver más</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-4 bottommargin-sm" data-animate="fadeInUpBig" data-delay="50">
+								<div class="feature-box media-box fbox-bg">
+									<div class="fbox-media">
+										<a href="iso14001.html"><img class="image_fade" src="images/innovacion.jpg" alt="Featured Box Image"></a>
+									</div>
+									<div class="fbox-desc">
+										<h3 class="nott ls0 t600">Sistema de Gestión Medioambiental<span class="subtitle">ISO 14001</span></h3>
+										<a href="iso14001.html" class="button-link noborder color">Ver más</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-4 bottommargin-sm" data-animate="fadeInUpBig" data-delay="100">
+								<div class="feature-box media-box fbox-bg">
+									<div class="fbox-media">
+										<a href="iso27001.html"><img class="image_fade" src="images/cifrado.jpg" alt="Featured Box Image"></a>
+									</div>
+									<div class="fbox-desc">
+										<h3 class="nott ls0 t600">Sistema de Gestión de Seguridad de la Información<span class="subtitle">ISO 27001</span></h3>
+										<a href="iso27001.html" class="button-link noborder color">Ver más</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					<!--	
+						<br>
+						<br>
+						
+						<div class="row clearfix portfolio">
+							<div class="col-lg-4 bottommargin-sm" data-animate="fadeInUpBig">
+								<div class="feature-box media-box fbox-bg">
+									<div class="fbox-media">
+										<a href="#"><img class="image_fade" src="images/lab-iso.jpg" alt="Featured Box Image"></a>
+									</div>
+									<div class="fbox-desc">
+										<h3 class="nott ls0 t600">Sistema de Gestión de Seguridad Alimentaria<span class="subtitle">ISO 22000</span></h3>
+										<a href="#" class="button-link noborder color">Ver más</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-4 bottommargin-sm" data-animate="fadeInUpBig" data-delay="50">
+								<div class="feature-box media-box fbox-bg">
+									<div class="fbox-media">
+										<a href="#"><img class="image_fade" src="images/safety-iso.jpg" alt="Featured Box Image"></a>
+									</div>
+									<div class="fbox-desc">
+										<h3 class="nott ls0 t600">Sistema de Gestión de Seguridad y Salud Laboral<span class="subtitle">ISO 45000</span></h3>
+										<a href="#" class="button-link noborder color">Ver más</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-4 bottommargin-sm" data-animate="fadeInUpBig" data-delay="100">
+								<div class="feature-box media-box fbox-bg">
+									<div class="fbox-media">
+										<a href="#"><img class="image_fade" src="images/sunset-iso.jpg" alt="Featured Box Image"></a>
+									</div>
+									<div class="fbox-desc">
+										<h3 class="nott ls0 t600">Otros certificados<span class="subtitle">Consulta otros estandarts</span></h3>
+										<a href="#" class="button-link noborder color">Ver más</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						-->
+		</div>
+			
+		<!-- Content
+		============================================= -->
+				
+								
+				
+
+				<!--Seccion-->
+				
+				<div id='mysection' class="section">
+
+					<div class="container clear-bottommargin clearfix">
+
+						<div class="heading-block center">
+							<h2>¿Por qué con nosotros?</h2>
+							<span style='padding-top:40px; padding-bottom:40px'>Con más de 10 años en España, satura sigue aumentando la red de empresas certificadas cada año. Dando asesoría local, flexible y directa, con el alcance y el prestigio de una entidad internacional. El equipo de auditores está distribuido por toda España, permitiendo a satura una cobertura nacional rápida y efectiva. </span>
+						</div>
+
+						<div class="row">
+
+							<div class="col-lg-4 bottommargin">
+								<img src="images/cubesicon.png" alt="iPhone" class="center-block">
+							</div>
+
+							<div class="col-lg-4 col-md-6 topmargin bottommargin">
+
+								<div class="col_full">
+
+									<div class="feature-box fbox-plain fbox-small fbox-dark">
+										<div class="fbox-icon">
+											<a href="#"><i class="icon-line-monitor"></i></a>
+										</div>
+										<h3>Comunicación Directa</h3>
+										<p>Estamos comprometidos a dar la mejor atención a nuestros clientes. Contacta directamente con el staff de GlobalGROUP para cualquier tipo de consulta.   </p>
+									</div>
+
+								</div>
+
+								<div class="col_full">
+
+									<div class="feature-box fbox-plain fbox-small fbox-dark">
+										<div class="fbox-icon">
+											<a href="#"><i class="icon-line-eye"></i></a>
+										</div>
+										<h3>Segura y de Confianza</h3>
+										<p>En satura, nuestros clientes forman parte de una comunidad cercana y de confianza. Atienda todas las necesidades de su empresa con asesoría personal y transparente.</p>
+									</div>
+
+								</div>
+
+								<div class="col_full nobottommargin">
+
+									<div class="feature-box fbox-plain fbox-small fbox-dark">
+										<div class="fbox-icon">
+											<a href="#"><i class="icon-line-power"></i></a>
+										</div>
+										<h3>Efectividad y Eficacia</h3>
+										<p>Priorizamos lo esencial, y nuestro objetivo es proporcionar un servicio de respuesta rápida y fácil, garantizando la satisfacción de nuestros clientes. </p>
+									</div>
+
+								</div>
+
+							</div>
+
+							<div class="col-lg-4 col-md-6 topmargin bottommargin">
+
+								<div class="col_full">
+
+									<div class="feature-box fbox-plain fbox-small fbox-dark">
+										<div class="fbox-icon">
+											<a href="#"><i class="icon-line-layers"></i></a>
+										</div>
+										<h3>Red Internacional</h3>
+										<p>Formamos parte de una red internacional de certificación presente en todos los continentes. Extienda la proyección internacional de su empresa con nuestros servicios.</p>
+									</div>
+
+								</div>
+
+								<div class="col_full">
+
+									<div class="feature-box fbox-plain fbox-small fbox-dark">
+										<div class="fbox-icon">
+											<a href="#"><i class="icon-line-star"></i></a>
+										</div>
+										<h3>Expertos en todos los sectores</h3>
+										<p>Nuestros auditores expertos, son profesionales de todas las áreas principales de la industria. Disponemos de auditores para todo tipo de sectores empresariales y certificaciones.</p>
+									</div>
+
+								</div>
+
+								<div class="col_full nobottommargin">
+
+									<div class="feature-box fbox-plain fbox-small fbox-dark">
+										<div class="fbox-icon">
+											<a href="#"><i class="icon-line-anchor"></i></a>
+										</div>
+										<h3>Presupuesto adaptado</h3>
+										<p>Adaptamos la escala de nuestros proyectos a los clientes. Contrata solo lo que necesitas y recibe el servicio adecuado.</p>
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<!--Seccion end-->
+
+				<!-- Cursos-->
+
+				<!--<div class="container clearfix">
+		
+								<div class="heading-block center">
+									<h2>Formación</h2>
+									<span>Impartimos formación de empresas con los expertos de cada sector. Explora las diferentes posibilidades de formación para mejorar tu empresa. </span>
+								</div>
+								
+		<div class="row clearfix portfolio bottommargin">
+							<div class="col-lg-4 bottommargin-sm" data-animate="fadeInUpBig">
+								<div class="feature-box media-box fbox-bg">
+									<div class="fbox-media">
+										<a href="404.html"><img class="image_fade" src="images/puzle.jpg" alt="Featured Box Image"></a>
+									</div>
+									<div class="fbox-desc">
+										<h3 class="nott ls0 t600">Recursos Humanos<span class="subtitle">Páquetes de formación personalizados</span></h3>
+										<a href="404.html" class="button-link noborder color">Ver más</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-4 bottommargin-sm" data-animate="fadeInUpBig" data-delay="50">
+								<div class="feature-box media-box fbox-bg">
+									<div class="fbox-media">
+										<a href="404.html"><img class="image_fade" src="images/formacion0.jpg" alt="Featured Box Image"></a>
+									</div>
+									<div class="fbox-desc">
+										<h3 class="nott ls0 t600">Auditorías<span class="subtitle">Formación de auditores en sistemas internacionales</span></h3>
+										<a href="404.html" class="button-link noborder color">Ver más</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-4 bottommargin-sm" data-animate="fadeInUpBig" data-delay="100">
+								<div class="feature-box media-box fbox-bg">
+									<div class="fbox-media">
+										<a href="404.html"><img class="image_fade" src="images/innovación.jpg" alt="Featured Box Image"></a>
+									</div>
+									<div class="fbox-desc">
+										<h3 class="nott ls0 t600">Gestión de empresas<span class="subtitle">Recursos de gestión para empresas</span></h3>
+										<a href="404.html" class="button-link noborder color">Ver más</a>
+									</div>
+								</div>
+							</div>
+						</div>
+	
+						</div>
+		</div>-->
+
+
+			
+			<!--<div class="content-wrap" style="padding-top:0">			
+				
+				<div class="row topmargin-lg footer-stick align-items-stretch">
+
+					<div class="col-lg-4 dark col-padding ohidden" style="background-color: #34495e;">
+						<div>
+							<a href="#"><h3 class="uppercase" style="font-weight: 600;">Auditores Expertos</h3></a>
+							<p style="line-height: 1.8;">Nuestro equipo de auditores esta formado por expertos en todos los sectores de la industria. Nuestro trabajo no se limita a la auditoría de certificación: recibe input de nuestros profesionales para crecer como empresa y emprende nuevos objetivos con los auditores de Globalgroup. </p>
+						</div>
+						<i class="icon-line-layers bgicon"></i>
+					</div>
+
+					<div class="col-lg-4 dark col-padding ohidden" style="background-color: #EF6E04;">
+						<div>
+							<a href="#"><h3 class="uppercase" style="font-weight: 600;">Implicación Máxima</h3></a>
+							<p style="line-height: 1.8;">Recibe asistencia directa del equipo directivo de Globalgroup. Ya sea a través de nuestros audtirores expertos o por contacto directo, nuestra dinámica de operaciones esta basada en el contacto directo con el cliente, nuestro objetivo es la satisfacción máxima.</p>
+						</div>
+						<i class="icon-paperplane bgicon"></i>
+					</div>
+
+					<div class="col-lg-4 dark col-padding ohidden" style="background-color: #34495e;">
+						<div>
+							<a href="#"><h3 class="uppercase" style="font-weight: 600;">Eficaces</h3></a>
+							<p style="line-height: 1.8;">Damos asesoría local, flexible y directa, con las ventajas y el prestigio de una entidad internacional. Nuestra filosofía esta basada en proveer un servicio eficaz y coste-eficiente, de respuesta rápida a disposición de las necesidades de nuestros clientes. </p>
+						</div>
+						<i class="icon-graph bgicon"></i>
+					</div>
+
+					<div class="clear"></div>
+
+				</div>	
+			</div>-->
+			
+			
+		</section><!-- #content end -->
+		
+		
+		<footer id="footer">
+
+			
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+						Copyrights &copy; 2020 todos los derechos pertenecen a satura., S.L.<br>
+						<!--<div class="copyright-links"><a href="404.html">Terminos de Uso</a> / <a href="404.html">Política de Privacidad</a></div>-->
+					</div>
+
+					<div class="col_half col_last tright">
+						<i class="icon-envelope2"></i> info@satura.com.es <span class="middot">&middot;</span> <i class="icon-headphones"></i> +34 902 955 533
+						
+
+						<div class="clear"></div>
+
+						<!--<div class="fright clearfix">
+							 
+							
+
+
+							<a href="#" class="social-icon si-small si-borderless si-linkedin">
+								<i class="icon-linkedin"></i>
+								<i class="icon-linkedin"></i>
+							</a>
+						</div>-->
+					</div>
+
+				</div>
+
+			</div><!-- #copyrights end -->
+
+		</footer><!-- #footer end -->
+
+				
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/plugins.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+
+	<script>
+	$(function() {
+		$( "#side-navigation" ).tabs({ show: { effect: "fade", duration: 400 } });
+	});
+	</script>
+
+</body>
+</html>
